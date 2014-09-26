@@ -8,10 +8,11 @@ namespace Extentions
     public static class ObjectExtension
     {
         /// <summary>
-        /// Método responsável por gerar uma string serializada de qualquer objeto em formato xml.
+        /// Generate a serialized string in xml from any not-static object
+        /// Gera uma string serializada em xml de qualquer objeto não estático.
         /// </summary>
         /// <param name="obj"></param>
-        /// <returns>String no formato XML</returns>
+        /// <returns>String in XML format</returns>
         public static string ToXML(object obj)
         {
             StringBuilder sb = new StringBuilder();
@@ -23,6 +24,13 @@ namespace Extentions
 
             return sb.ToString();
         }
+        /// <summary>
+        /// Converts a xml string to object
+        /// Converte uma string em xml para objeto
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static T FromXMLToObject<T>( string obj)
         {
             using (XmlReader reader = XmlReader.Create(new StringReader(obj)))
@@ -32,4 +40,3 @@ namespace Extentions
             }
         }
     }
-}

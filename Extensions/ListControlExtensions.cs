@@ -7,8 +7,9 @@ namespace Extensions
 {
      public static class ListControlExtensions
     {
-	        /// <summary>
-        /// Este método é responsável por sobrescrever todos os itens do list.
+	    /// <summary>
+        ///  Ovverride all items from list
+        ///  Sobre-escreve todos os itens da lista 
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="listControl"></param>
@@ -22,14 +23,16 @@ namespace Extensions
                 if (item != null)
                     listControl.Add(item);
             }
+            
         }
     
         /// <summary>
-        /// method for returning N number of random items from a generic list
+        /// Returns 1 or N  number of random items from a generic list
+        /// Retorna 1 ou N quantidade de itens de uma lista genérica
         /// </summary>
         /// <typeparam name="T">Item type</typeparam>
-        /// <param name="list">Generic list we wish to retrieve from</param>
-        /// <param name="count">number of items to return</param>
+        /// <param name="list"></param>
+        /// <param name="count"></param>
         /// <returns></returns>
         public static IEnumerable<T> Randomize<T>(this List<T> list, int count)
         {
@@ -54,17 +57,23 @@ namespace Extensions
         }
 
         /// <summary>
-        /// method for returning 1 item from the generic list
+        /// Returns 1 random item from the list
+        /// Retorna 1 item aleatório da lista
         /// </summary>
         /// <typeparam name="T">Item type</typeparam>
         /// <param name="list">Generic list we wish to retrieve from</param>
-        /// <param name="count">number of items to return</param>
         /// <returns></returns>
         public static T Randomize<T>(this List<T> list)
         {
             return Randomize(list, 1).FirstOrDefault();
         }
-		
+		/// <summary>
+		/// Returns true for empty list
+		/// Informa se a lista está vazia
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list"></param>
+		/// <returns></returns>
         public static bool IsEmpty<T>(this List<T> list)
         {
             return list.Count == 0;
