@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='wiz'>
+<head>
+    <meta charset="UTF-8">
+    <title>wiz</title>
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+
+<script src="app.js"></script>    
+</head>
+<body ng-controller="wizCtrl as wz">
+
+    <h1 ng-click='wz.test()'>survey</h1>
+
+   <div id="first" ng-show="wz.current('first')">
+       <p>first</p>
+   </div>
+   <div id="page2" ng-show="wz.current('page2')">
+       <p>texto da page 2</p>
+   </div>
+   <div id="page3" ng-show="wz.current('page3')">
+       <p>texto da page 3</p>
+   </div>
+   <div id="page4" ng-show="wz.current('page4')">
+       <p>texto da page 4</p>
+   </div>
+   <div id="last" ng-show="wz.current('last')">
+       <p>last</p>
+   </div>
+   
+   <button ng-click="wz.prev()" ng-disabled="wz.cantPrev()">prev</button>
+   <button ng-click="wz.next()" 
+   ng-hide="wz.isLast()" 
+   ng-disabled="wz.cantNext()">next</button>
+   <button ng-click="wz.test()" ng-show="wz.isLast()">finish</button>
+   
+
+</body>
+</html>
