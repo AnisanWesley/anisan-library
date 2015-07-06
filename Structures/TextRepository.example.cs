@@ -1,10 +1,10 @@
-using NDDigital.DiarioAcademia.Dominio.TurmaModule;
+using TurmaModule;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace NDDigital.DiarioAcademia.Infraestrutura.Texto.TurmaTexto
+namespaceTexto.TurmaTexto
 {
     public class TurmaTextoRepository : ITurmaRepository
     {
