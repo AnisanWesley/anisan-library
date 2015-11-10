@@ -4,18 +4,18 @@ namespace Extensions
 	{
         /// <summary>
         /// Checks if bitwise enum is from value compared
-        /// Verifica se a flag de enum contÈm o valor comparado
+        /// Verifica se a flag de enum cont√©m o valor comparado
         /// </summary>
         /// <param name="pos"></param>
         /// <param name="compared"></param>
         /// <returns></returns>
 		public static bool IsBitwise(this Enum pos, Enum compared)
         {
-            return ((Extensive)pos & (Extensive)compared) != 0;
+            return ((Direction)pos & (Direction)compared) != 0;
         }
         /// <summary>
         /// Checks if bitwise enum is not from value compared
-        /// Verifica se a flag de enum n„o contÈm o valor comparado
+        /// Verifica se a flag de enum n√£o cont√©m o valor comparado
         /// </summary>
         /// <param name="pos"></param>
         /// <param name="compared"></param>
@@ -25,14 +25,21 @@ namespace Extensions
             return !pos.IsBitwise(compared);
         }
 		
-        //Replace this for any enum
-		public enum Extensive{q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m}
+        //Sample
+	public enum Direction
+        {
+            None = 0,      //0000
+            Left = 1,      //0001
+            Right = 1<<1,  //0010
+            Up = 1<<2,     //0100
+            Down = 1<<3,   //1000
+        }
 
 
 
         /// <summary>
         /// Returns enums description
-        /// Retorna a descriÁ„o do enum
+        /// Retorna a descri√ß√£o do enum
         /// </summary>
         /// <param name="e"></param>
         /// <returns></returns>
