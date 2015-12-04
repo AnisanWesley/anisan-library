@@ -13,20 +13,20 @@ namespaceTexto.TurmaTexto
 
         public TurmaTextoRepository()
         {
-            if (!File.Exists(_arquivo))// Verifrica se o arquivo existe
+            if (!File.Exists(_arquivo))// Verifica se o arquivo existe
             {
-                using (var s = File.CreateText(_arquivo)) { } // Se não existe ele cria um novo
+                using (var s = File.CreateText(_arquivo)) { } // Se não existe, cria um novo
             }
 
             var lines = File.ReadAllLines(_arquivo); //Lê todas as linhas do arquivo
 
-            _turmas = new List<Turma>(); //Estancia a lista
+            _turmas = new List<Turma>(); //Instancia a lista
 
             foreach (var line in lines)
             {
                 var turma = new Turma();
 
-                var data = line.Split(';');//Separa do caracter especial
+                var data = line.Split(';');//Faz split no caracter especial
 
                 turma.Id = Convert.ToInt16(data[0]); //Cada posição é adicionada nas respectivas
                 turma.Descricao = data[1];                //propriedade do objeto
