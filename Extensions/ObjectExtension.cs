@@ -13,7 +13,7 @@ namespace Extentions
         /// </summary>
         /// <param name="obj"></param>
         /// <returns>String in XML format</returns>
-        public static string Serialize(object obj)
+        public static string Serialize(this object obj)
         {
             StringBuilder sb = new StringBuilder();
             using (XmlWriter writer = XmlWriter.Create(sb))
@@ -31,7 +31,7 @@ namespace Extentions
         /// <typeparam name="T"></typeparam>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public static T Deserialize<T>( string obj)
+        public static T Deserialize<T>(this string obj)
         {
             using (XmlReader reader = XmlReader.Create(new StringReader(obj)))
             {
